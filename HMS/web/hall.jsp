@@ -1,19 +1,31 @@
 <%-- 
     Document   : hall
-    Created on : 9 Oct, 2012, 12:07:21 AM
+    Created on : 8 Oct, 2012, 11:48:13 PM
     Author     : niyasc
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="banner.jsp"%>
+
 <!DOCTYPE html>
 <html>
-    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Hall User</title>
-    </head>
-    <body>
-        
-        <h1>welcome hall user</h1>
-    </body>
+        <title>Admin User</title>
+
+    <%
+    if(session.getAttribute("username")==null)
+           {%>
+           <%@ include file="banner.jsp"%>
+           <center> <font color="red">Please Login First</font></center>
+           <%@ include file="login.jsp"%>
+    <%
+       }
+    else
+    {
+    %>
+           Welcome <%=session.getAttribute("username")%>
+           <a href="logout.jsp">logout</a>
+    <%
+    }
+    %>
+   
 </html>

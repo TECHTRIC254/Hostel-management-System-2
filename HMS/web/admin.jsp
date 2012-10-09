@@ -5,14 +5,27 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="banner.jsp"%>
+
 <!DOCTYPE html>
 <html>
-    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin User</title>
-    </head>
-    <body>
-        <h1>Welcome Admin</h1>
-    </body>
+
+    <%
+    if(session.getAttribute("username")==null)
+           {%>
+           <%@ include file="banner.jsp"%>
+           <center> <font color="red">Please Login First</font></center>
+           <%@ include file="login.jsp"%>
+    <%
+       }
+    else
+    {
+    %>
+           Welcome <%=session.getAttribute("username")%>
+           <a href="logout.jsp">logout</a>
+    <%
+    }
+    %>
+   
 </html>

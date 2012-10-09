@@ -1,19 +1,31 @@
 <%-- 
-    Document   : hostel
-    Created on : 9 Oct, 2012, 12:07:58 AM
+    Document   : admin
+    Created on : 8 Oct, 2012, 11:48:13 PM
     Author     : niyasc
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="banner.jsp"%>
+
 <!DOCTYPE html>
 <html>
-    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hostel User</title>
-    </head>
-    <body>
-        
-        <h1>Welcome Hostel User</h1>
-    </body>
+
+    <%
+    if(session.getAttribute("username")==null)
+           {%>
+           <%@ include file="banner.jsp"%>
+           <center> <font color="red">Please Login First</font></center>
+           <%@ include file="login.jsp"%>
+    <%
+       }
+    else
+    {
+    %>
+           Welcome <%=session.getAttribute("username")%>
+           <a href="logout.jsp">logout</a>
+    <%
+    }
+    %>
+   
 </html>

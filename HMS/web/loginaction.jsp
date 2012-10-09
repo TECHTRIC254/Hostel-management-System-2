@@ -20,17 +20,23 @@ rs.next();
 //out.println(rs.getRow());
 if(rs.getRow()==1)
 {
+    request.getSession();
+    out.println("new session created");
+    session.setAttribute("username",rs.getString(1));
     if(rs.getInt(3)==0){
     %>
-    <%@ include file="admin.jsp" %>
+    <%--@ include file="admin.jsp" --%>
+    <%response.sendRedirect("admin.jsp");%>
     <%}
        else if(rs.getInt(3)==1){
     %>
-    <%@ include file="hall.jsp" %>
+    <%--@ include file="hall.jsp" --%>
+    <%response.sendRedirect("hall.jsp");%>
     <%}
     else{
     %>
-    <%@ include file="hostel.jsp" %>
+    <%--@ include file="hostel.jsp" --%>
+    <%response.sendRedirect("hostel.jsp");%>
     <%}
     
 }
