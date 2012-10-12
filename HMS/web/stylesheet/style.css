@@ -1,0 +1,36 @@
+    .banner {
+    background: #70bf32;
+    background: url('linear-gradient.png') 0 0 repeat-x;
+    background: -moz-linear-gradient(top, #a1e048, #6a942f);
+    background: -ms-linear-gradient(top, #a1e048, #6a942f);
+    background: -o-linear-gradient(top, #a1e048, #6a942f);
+    background: -webkit-linear-gradient(top, #a1e048, #6a942f);
+    background: linear-gradient(top, #a1e048, #6a942f);
+    }
+    .title
+    {
+    text-align : center;
+    text-decoration:underline;
+    color:white;
+    font-family:"urw bookman l";
+    font-size:40px;
+    }
+    .name
+    {
+    text-align : center;
+    color:yellow;
+    font-family:"urw bookman l";
+    font-size:40px;
+    }
+    .warning
+    {
+    text-align : center;
+    color:red;
+    font-size:15px;
+    }    
+    .signoff
+    {
+    text-align : center;
+    color:green;
+    font-size:15px;
+    }

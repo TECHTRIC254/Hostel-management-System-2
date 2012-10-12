@@ -14,6 +14,6 @@
     session.setAttribute("username",null);
     session.invalidate();
     out.println("Successfully logged out.\nRedirecting to login page");
-    response.sendRedirect("index.jsp");
+    response.sendRedirect("index.jsp?status=3");
     }
     %>

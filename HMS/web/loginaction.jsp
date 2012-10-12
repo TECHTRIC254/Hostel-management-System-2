@@ -43,11 +43,7 @@ if(rs.getRow()==1)
     
 else
 {
-    %>
-    <%@ include file="banner.jsp" %>
-    <center><font color="red">Login failed</font></center>
-    <%@ include file="login.jsp" %>
-    <%
+    response.sendRedirect("index.jsp?status=2");
 }
 rs.close();
 conn.close();

@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <center>
-        <form method="POST" action="loginaction.jsp">
+        <form method="GET" action="loginaction.jsp">
         <table>
             <tr>
                 <td>User name:</td>

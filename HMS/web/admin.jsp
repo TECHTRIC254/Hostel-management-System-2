@@ -31,11 +31,7 @@ else if (session.getAttribute("username")!=null)
        }
 else
        {
-    %>
-    <%@ include file="banner.jsp" %>
-    <center><font color="red">Please Login First</font></center>
-    <%@ include file="login.jsp" %>
-    <%
+response.sendRedirect("index.jsp?status=1");
 }
 rs.close();
 conn.close();
