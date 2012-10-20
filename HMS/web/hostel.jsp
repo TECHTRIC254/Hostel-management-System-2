@@ -5,6 +5,7 @@ import="java.sql.*" errorPage="" %>
 <title>Hostel Page</title>
 </head>
 <body>
+    <%@include file="banner.jsp"%>
 <% String url = "jdbc:mysql://localhost:3306/hms";
 String user= "root";
 String pass= "123456";
@@ -20,8 +21,14 @@ rs.next();
 if(rs.getRow()==1)
 {
            %>
-           Welcome <%=session.getAttribute("username")%>
-           <a href="logout.jsp">logout</a>
+           <table><tr>
+                   <td>
+                    <%@include file="hostel-panel.jsp"%>   
+                   </td>
+                   <td>
+                       Hostel page info
+                   </td>
+               </tr></table>
            <%
 }
     

@@ -6,9 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html>
-
+    <title>Login Page</title>
 <%@ include file="banner.jsp" %>
 <%
     String status=(request.getParameter("status"));
@@ -30,5 +29,5 @@
           }
       %>
 <%@ include file="login.jsp" %>
-    
+    </body>
 </html>

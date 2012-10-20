@@ -9,7 +9,7 @@
     }
     .title
     {
-    text-align : center;
+    text-align : left;
     text-decoration:underline;
     color:white;
     font-family:"urw bookman l";
@@ -17,7 +17,7 @@
     }
     .name
     {
-    text-align : center;
+    text-align : left;
     color:yellow;
     font-family:"urw bookman l";
     font-size:40px;
@@ -34,3 +34,32 @@
     color:green;
     font-size:15px;
     }
+    a.btn {
+	display: block; width: 200px; height: 30px; padding: 10px 0px 0 10; margin: 0 auto;
+	
+	background: red; /* old browsers */
+	background: -moz-linear-gradient(top, yellowgreen 0%, green 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8DD297), color-stop(100%,#398525)); /* webkit */
+	
+	box-shadow: inset 0px 0px 6px #fff;
+	-webkit-box-shadow: inset 0px 0px 6px #fff;
+	border: 1px solid green;
+	border-radius: 10px;
+	
+	font: bold 15px/15px Helvetica, Sans-Serif; text-align: left;
+	text-transform: uppercase; text-decoration: none;
+	color: windowtext;
+	text-shadow: 0px 1px 2px #b4d1ad;
+	
+	-moz-transition: color 0.25s ease-in-out;
+	-webkit-transition: color 0.25s ease-in-out;
+	transition: color 0.25s ease-in-out;	
+}
+
+	a.btn:hover {
+		color: greenyellow;
+		
+		-moz-transition: color 0.25s ease-in-out;
+		-webkit-transition: color 0.25s ease-in-out;
+		transition: color 0.25s ease-in-out;
+	}
