@@ -1,22 +1,14 @@
-<%-- 
-    Document   : login
-    Created on : 8 Oct, 2012, 11:52:28 PM
-    Author     : niyasc
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <center>
+<div class="signin-box">
+<center>
         <form method="GET" action="loginaction.jsp">
         <table>
             <tr>
-                <td>User name:</td>
+                <td><div class="strong">User name</div></td>
                 <td>:</td>
                 <td><input type="text" name="username"/></td>
             </tr>
             <tr>
-                <td>Password</td>
+                <td><div class="strong">Password</div></td>
                 <td>:</td>
                 <td><input type="password" name="password"/></td>
                 
@@ -24,9 +16,9 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td><input type="submit" value="login"/></td>
+                <td><input type="submit" value="login" class="g-button-submit"/></td>
             </tr>
         </table>
     </form>
-    </center>
-</html>
+</center>
+</div>

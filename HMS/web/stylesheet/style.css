@@ -63,3 +63,94 @@
 		-webkit-transition: color 0.25s ease-in-out;
 		transition: color 0.25s ease-in-out;
 	}
+.loginbox
+{
+  margin-top: 12px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  background-color: #f1f1f1;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  border-top-width: 1px;
+  border-right-width-value: 1px;
+  border-bottom-width: 1px;
+  border-left-width-value: 1px;
+  border-top-style: solid;
+  border-right-style-value: solid;
+  border-bottom-style: solid;
+  border-left-style-value: solid;
+  border-top-color: #e5e5e5;
+  border-right-color-value: #e5e5e5;
+  border-bottom-color: #e5e5e5;
+  border-left-color-value: #e5e5e5;
+}
+
+input, select, textarea
+{
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Line 397 */
+
+strong
+{
+  color: #222222;
+}
+
+/* Line 1283 */
+.signin-box
+{
+  font-weight: bold;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0.5em;
+  margin-left: 0px;
+  display: block;
+}
+.g-button-submit
+{
+  border-top-width: 1px;
+  border-right-width-value: 1px;
+  border-bottom-width: 1px;
+  border-left-width-value: 1px;
+  border-top-style: solid;
+  border-right-style-value: solid;
+  border-bottom-style: solid;
+  border-left-style-value: solid;
+  border-top-color: #3079ed;
+  border-right-color-value: #3079ed;
+  border-bottom-color: #3079ed;
+  border-left-color-value: #3079ed;
+  color: #ffffff;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+  background-color: #4d90fe;
+}
+.g-button-submit:hover
+{
+  border-top-width: 1px;
+  border-right-width-value: 1px;
+  border-bottom-width: 1px;
+  border-left-width-value: 1px;
+  border-top-style: solid;
+  border-right-style-value: solid;
+  border-bottom-style: solid;
+  border-left-style-value: solid;
+  border-top-color: #2f5bb7;
+  border-right-color-value: #2f5bb7;
+  border-bottom-color: #2f5bb7;
+  border-left-color-value: #2f5bb7;
+  color: #ffffff;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+  background-color: #357ae8;
+}
