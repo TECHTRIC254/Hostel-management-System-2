@@ -63,43 +63,13 @@
 		-webkit-transition: color 0.25s ease-in-out;
 		transition: color 0.25s ease-in-out;
 	}
-.loginbox
-{
-  margin-top: 12px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  padding-top: 20px;
-  padding-right: 25px;
-  padding-bottom: 15px;
-  padding-left: 25px;
-  background-color: #f1f1f1;
-  background-image: none;
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-position: 0% 0%;
-  background-clip: border-box;
-  background-origin: padding-box;
-  background-size: auto auto;
-  border-top-width: 1px;
-  border-right-width-value: 1px;
-  border-bottom-width: 1px;
-  border-left-width-value: 1px;
-  border-top-style: solid;
-  border-right-style-value: solid;
-  border-bottom-style: solid;
-  border-left-style-value: solid;
-  border-top-color: #e5e5e5;
-  border-right-color-value: #e5e5e5;
-  border-bottom-color: #e5e5e5;
-  border-left-color-value: #e5e5e5;
-}
 
 input, select, textarea
 {
   font-family: inherit;
   font-size: inherit;
 }
+
 
 /* Line 397 */
 
@@ -153,4 +123,12 @@ strong
   color: #ffffff;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
   background-color: #357ae8;
+}
+.heading
+{
+    text-align : center;
+    text-decoration:underline;
+    color:black;
+    font-family:"urw bookman l";
+    font-size:20px;
 }
