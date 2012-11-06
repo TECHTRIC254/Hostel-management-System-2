@@ -4,15 +4,35 @@
     Author     : niyasc
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" language="java"
+import="java.sql.*" errorPage="" %>
 <!DOCTYPE html>
 <html>
 <head>
-
     <title>Login Page</title>
 </head>
 <%@ include file="banner.jsp" %>
 <body>
+<% 
+if(session.getAttribute("username")!=null){
+%>
+
+<%
+Integer level=(Integer)session.getAttribute("level");
+out.println("."+level+".");
+
+if(level==0){
+    out.println("<jsp:forward page='admin.jsp' />");
+}
+else if(level.equals("1")){
+    out.println("<jsp:forward page='hall.jsp' />");    
+}
+else if(level.equals("2")){
+    out.println("<jsp:forward page='hostel.jsp' />");    
+}
+    
+       }
+%>
 <%
 
     String status=(request.getParameter("status"));

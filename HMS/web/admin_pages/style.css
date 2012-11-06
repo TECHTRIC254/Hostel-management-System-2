@@ -1,28 +1,4 @@
-    .banner {
-    background: #70bf32;
-    background: url('linear-gradient.png') 0 0 repeat-x;
-    background: -moz-linear-gradient(top, #a1e048, #6a942f);
-    background: -ms-linear-gradient(top, #a1e048, #6a942f);
-    background: -o-linear-gradient(top, #a1e048, #6a942f);
-    background: -webkit-linear-gradient(top, #a1e048, #6a942f);
-    background: linear-gradient(top, #a1e048, #6a942f);
-    width: 1263;
-    }
-    .title
-    {
-    text-align : left;
-    text-decoration:underline;
-    color:white;
-    font-family:"urw bookman l";
-    font-size:40px;
-    }
-    .name
-    {
-    text-align : left;
-    color:yellow;
-    font-family:"urw bookman l";
-    font-size:40px;
-    }
+
     .warning
     {
     text-align : center;
@@ -132,4 +108,26 @@ strong
     color:black;
     font-family:"urw bookman l";
     font-size:20px;
+}
+.center
+{
+    text-align: center;
+}
+table{
+    font-family: Arial,Helvetica,sans-serif;
+    background-color: #fbf685;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    font-size: 24px;
+    font-weight: 100;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    border : 1px solid black;
+    overflow: scroll;
+    background-attachment: scroll;
+    min-width: 100%;
 }

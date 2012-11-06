@@ -1,5 +1,6 @@
 <%@ page contentType="text/html" language="java"
 import="java.sql.*" errorPage="" %>
+<% String block=request.getParameter("page");%>
 <html>
 <head>
 <title>Admin Page</title>
@@ -24,11 +25,53 @@ if(rs.getRow()==1)
            
         
            <table><tr>
-                   <td>
+                   <td style="vertical-align: top">
                     <%@include file="admin-panel.jsp"%>   
                    </td>
                    <td>
-                       Admin page info
+                       <%
+                       if(block==null||block.equals("home")){
+                               out.println("<iframe src =admin_pages/home.jsp width=1040 height=430>");
+                               out.println("<p>Your browser does not support iframes.</p>");
+                               out.println("</iframe>");
+                       }
+                                             else if(block.equals("add_hall")){
+                                                out.println("<iframe src =admin_pages/add_hall.jsp width=1040 height=430>");
+                                                out.println("<p>Your browser does not support iframes.</p>");
+                                                out.println("</iframe>");
+                                                 
+                                             }
+                                             else if(block.equals("hall_info")){
+                                                out.println("<iframe src =admin_pages/hall_info.jsp width=1040 height=430>");
+                                                out.println("<p>Your browser does not support iframes.</p>");
+                                                out.println("</iframe>");
+                                                 
+                                             }
+                                            else if(block.equals("hostel_info")){
+                                                out.println("<iframe src =admin_pages/hostel_info.jsp width=1040 height=430>");
+                                                out.println("<p>Your browser does not support iframes.</p>");
+                                                out.println("</iframe>");
+                                                 
+                                             }
+                                            else if(block.equals("student_info")){
+                                                out.println("<iframe src =admin_pages/student_info.jsp width=1040 height=430>");
+                                                out.println("<p>Your browser does not support iframes.</p>");
+                                                out.println("</iframe>");
+                                                 
+                                             }
+                                             else if(block.equals("update_hall")){
+                                                out.println("<iframe src =admin_pages/update_hall.jsp width=1040 height=430>");
+                                                out.println("<p>Your browser does not support iframes.</p>");
+                                                out.println("</iframe>");
+                                                 
+                                             }
+                       
+                                             else{
+                           //out.println("."+block.charAt(5)+".");
+                           out.println(block);
+                           out.println("Requested resource not found or you are not supposed to access it");
+                                             }
+                       %>
                    </td>
                </tr></table>
            

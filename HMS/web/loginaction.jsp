@@ -23,6 +23,7 @@ if(rs.getRow()==1)
     request.getSession();
     out.println("new session created");
     session.setAttribute("username",rs.getString(1));
+    session.setAttribute("level", rs.getInt(3));
     if(rs.getInt(3)==0){
     %>
     <%--@ include file="admin.jsp" --%>
