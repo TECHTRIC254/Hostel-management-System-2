@@ -34,23 +34,15 @@ if(rs.getRow()==1)
   <jsp:param name="message" value="Hall already exist" />
 </jsp:forward><%
        }
-else{
-    query="select count(*) from Hall";
-    rs = stmt.executeQuery(query);
-    int count=0;
-    while(rs.next()){
-        count=rs.getInt(1);
-    }
-    int id=count+1;
-    query="insert into Hall values("+id+",'"+request.getParameter("name")+"',0,0)";
-    stmt.executeUpdate(query);
-}
 
-rs.close();
+    query="insert into Hall(name,no_of_emp,no_of_hostels) values('"+request.getParameter("name")+"',0,0)";
+    stmt.executeUpdate(query);
+
 conn.close();
+response.sendRedirect("hall_info.jsp?message=Hall+inserted+Succesfully&type=success");
 }catch(Exception e)
 {
 out.println(e.toString());
 }
-response.sendRedirect("home.jsp?message=Hall+inserted+Succesfully");
+
 %>

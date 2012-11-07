@@ -21,7 +21,7 @@
         
     }
        else{
-       out.println("");
+       out.println("</br>");
         
        }
    %>
@@ -33,15 +33,13 @@ try{
 Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 Connection conn = DriverManager.getConnection(url, user, pass);
 Statement stmt = conn.createStatement();
-String query="select * from Hall";
+String query="select a.uname,b.name from accounts a,Hall b where b.hid=a.h_no";
 ResultSet rs = stmt.executeQuery(query);
 %>
 <table class="table_style">
     <tr>
-    <td>Hall ID</td>
-    <td>Name</td>
-    <td>Number of Employees</td>
-    <td>Number of Hostels</td>
+    <td>UserName</td>
+    <td>Hall</td>
     </tr>
     <%
     int i=0;
@@ -49,25 +47,35 @@ ResultSet rs = stmt.executeQuery(query);
         
 
         out.println("<tr>");
-        out.println("<td>"+rs.getInt(1)+"</td>");
-        //out.println("<td>"+rs.getString("name")+"</td>");
-        out.println("<form method='POST' action='modify_hall.jsp'>");
-        out.println("<input type='hidden' value='"+rs.getInt(1)+"' name='id'/>");
-        out.println("<td><input type='text' value='"+rs.getString("name")+"' name='name' required></td>");
+        out.println("<td>"+rs.getString("a.uname")+"</td>");
+        out.println("<td>"+rs.getString("b.name")+"</td>");
+/*        out.println("<form method='POST' action='password_reset.jsp'>");
+        out.println("<td style='white-space : nowrap;'><input type='submit' value='Reset Password'/>");
+        out.println("</form>");
+        out.println("<form method='POST' action='delete_account.jsp'>");
+        out.println("<input type='submit' value='Delete Account'/></td>");
+        out.println("</form>");*/
         %>
-        
+        <form method="POST" action='password_reset.jsp'>
+            <td><%
+                out.println("<input type='hidden' value='"+rs.getString("a.uname")+"' name='uname'/>");
+                %>
+                <input type="submit" value="Reset Password">
+            </td>
+        </form>
+        <form method="POST" action="delete_account.jsp">
+        <td>
+            <input type="submit" value="Delete Account"/>
+            <%
+                out.println("<input type='hidden' value='"+rs.getString("a.uname")+"' name='uname'/>");
+                %>
+        </td>
+        </form>
         <%
-        out.println("<td>"+rs.getInt(3)+"</td>");
-        out.println("<td>"+rs.getInt(4)+"</td>");
-        out.println("<td><input type='submit' value='Update'/></td>");
-        out.println("</form>");
-        out.println("<form method='POST' action='delete_hall.jsp'>");
-        out.println("<input type='hidden' value='"+rs.getInt(1)+"' name='id'/>");
-        out.println("<td><input type='submit' value='Delete'/></td>");
-        out.println("</form>");
+
         out.println("</tr>");
         i=i+1;
-               }
+   }
     if(i==0){
         %>
         <tr>
@@ -75,11 +83,10 @@ ResultSet rs = stmt.executeQuery(query);
         </tr>
         <%
 }
-out.println("<br/>");
 %>
 </table>
-    <form action="add_hall.jsp">
-      <input type="submit" value="Add Hall" style=" font-size: 24px;font-family: Arial"/>
+  <form action="create_account.jsp">
+      <input type="submit" value="Create Account" style=" font-size: 24px;font-family: Arial"/>
   </form>
 <%
 rs.close();

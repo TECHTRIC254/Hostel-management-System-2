@@ -27,7 +27,7 @@
             <td style="text-align: center">Name</td>
         </tr>
         <tr>
-            <td style="text-align: center"><input type="text"  name="name"/></td>
+            <td style="text-align: center"><input type="text"  name="name" required/></td>
         </tr>
         <tr>
             <td style="text-align: center"><input type="submit" value="Add Hall"/></td>

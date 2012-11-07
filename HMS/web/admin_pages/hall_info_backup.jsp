@@ -32,26 +32,13 @@ ResultSet rs = stmt.executeQuery(query);
     </tr>
     </thead>
     <%
-    int i=0;
     while(rs.next()){
-        out.println("<form method='POST' action='delete_hall.jsp'>");
-        out.println("<form method='POST' action='modify_hall.jsp'");
         out.println("<tr>");
         out.println("<td>"+rs.getInt(1)+"</td>");
-        //out.println("<td>"+rs.getString("name")+"</td>");
-        out.println("<td><input type='text' value='"+rs.getString("name")+"' name='"+i+"' ></td>");
-        %>
-        
-        <%
+        out.println("<td>"+rs.getString("name")+"</td>");
         out.println("<td>"+rs.getInt(3)+"</td>");
         out.println("<td>"+rs.getInt(4)+"</td>");
-        out.println("<td><input type='submit' value='Update'/></td>");
-        out.println("</form>");
-        out.println("<td><input type='submit' value='Delete'/></td>");
-        out.println("</form>");
         out.println("</tr>");
-        
-        i++;
                }
 out.println("<br/>");
 %>

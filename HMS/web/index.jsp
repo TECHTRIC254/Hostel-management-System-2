@@ -15,23 +15,20 @@ import="java.sql.*" errorPage="" %>
 <body>
 <% 
 if(session.getAttribute("username")!=null){
-%>
+    Integer level=(Integer)session.getAttribute("level");
+    //out.println("."+level+".");
+    if(level==0){
+    %><jsp:forward page="admin.jsp" /><%
+}
+else if(level==1){
+    %><jsp:forward page="hall.jsp" /><%   
+}
+else if(level==2){
+    %><jsp:forward page="hostel.jsp" /><%   
+}
+    //request.wait(1000);
 
-<%
-Integer level=(Integer)session.getAttribute("level");
-out.println("."+level+".");
-
-if(level==0){
-    out.println("<jsp:forward page='admin.jsp' />");
 }
-else if(level.equals("1")){
-    out.println("<jsp:forward page='hall.jsp' />");    
-}
-else if(level.equals("2")){
-    out.println("<jsp:forward page='hostel.jsp' />");    
-}
-    
-       }
 %>
 <%
 

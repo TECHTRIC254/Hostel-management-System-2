@@ -5,12 +5,12 @@
             <tr>
                 <td><div class="strong">User name</div></td>
                 <td>:</td>
-                <td><input type="text" name="username"/></td>
+                <td><input type="text" name="username" required/></td>
             </tr>
             <tr>
                 <td><div class="strong">Password</div></td>
                 <td>:</td>
-                <td><input type="password" name="password"/></td>
+                <td><input type="password" name="password" required/></td>
                 
             </tr>
             <tr>

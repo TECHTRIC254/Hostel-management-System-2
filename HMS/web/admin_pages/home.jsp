@@ -3,15 +3,6 @@ import="java.sql.*" errorPage="" %>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<div class="heading">Hall of Students Residence Statistics</div>   
-<%
-
-                       if(request.getParameter("message")!=null){
-                       out.println("<div class='signoff'>"+request.getParameter("message")+"</div>");
-                                             }
-                                             else{
-                           out.println("<br/>");
-                                             }%>
                                           
 <% 
 String url = "jdbc:mysql://localhost:3306/hms";
@@ -44,25 +35,25 @@ rs=stmt.executeQuery(query);
 rs.next();
 int employee=rs.getInt(1);
 %>
-<table border="1" style="margin-top: 10" class="table">
+<br/>
+<table class="table_style">
+    <tr>
+        <td>Hall of Students Residence Overview</td>
+    </tr>
     <tr>
         <td>Number of Halls</td>
-        <td>:</td>
         <td><%=hall%></td>
     </tr>
     <tr>
         <td>Number of Hostels</td>
-        <td>:</td>
         <td><%=hostel%></td>
     </tr>
     <tr>
         <td>Number of Students</td>
-        <td>:</td>
         <td><%=student%></td>
     </tr>
     <tr>
         <td>Number of Employees</td>
-        <td>:</td>
         <td><%=employee%></td>
     </tr>
 </table>

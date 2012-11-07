@@ -10,7 +10,6 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
-    <div class="heading">List of Students<br/></div>
     
 <% 
 String url = "jdbc:mysql://localhost:3306/hms";
@@ -25,22 +24,21 @@ String query="select a.sid,a.name,a.course,a.dept,a.year,a.city,a.state,a.phone,
  + "and c.hid=(select hostel_id from student_hostel where student_id=a.sid)";
 ResultSet rs = stmt.executeQuery(query);
 %>
-<table border="1">
-    <thead>
+<table class="table_style">
     <tr>
-    <th>Student ID</th>
-    <th>Name</th>
-    <th>Course</th>
-    <th>Department</th>
-    <th>Year</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Phone</th>
-    <th>Room No.</th>
-    <th>Hostel</th>
+    <td>Student ID</td>
+    <td>Name</td>
+    <td>Course</td>
+    <td>Department</td>
+    <td>Year</td>
+    <td>City</td>
+    <td>State</td>
+    <td>Phone</td>
+    <td>Room No.</td>
+    <td>Hostel</td>
     </tr>
-    </thead>
     <%
+    int i=0;
     while(rs.next()){
         out.println("<tr>");
         out.println("<td>"+rs.getInt(1)+"</td>");
@@ -61,7 +59,15 @@ ResultSet rs = stmt.executeQuery(query);
         //out.println("<td>"+rs.getInt(7)+"</td>");
         //out.println("<td>"+rs.getString("b.name")+"</td>");
         out.println("</tr>");
+        i=i+1;
                }
+    if(i==0){
+        %>
+        <tr>
+            <td>No records found.</td>
+        </tr>
+        <%
+}
 out.println("<br/>");
 %>
 </table>

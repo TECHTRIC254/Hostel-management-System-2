@@ -3,8 +3,6 @@
 <a href='admin.jsp?page=hall_info' class="btn">Hall Info</a>
 <a href="admin.jsp?page=hostel_info" class="btn">Hostel Info</a>
 <a href="admin.jsp?page=student_info" class="btn">Student Info</a>
-<a href='admin.jsp?page=add_hall' class="btn">Add Hall</a>
-<a href="admin.jsp?page=update_hall" class="btn">Update Hall</a>
-<a href="" class="btn">Hall Accounts</a>
-<a href="" class="btn">Account Settings</a>
+<a href="admin.jsp?page=hall_accounts" class="btn">Hall Accounts</a>
+<a href="admin.jsp?page=account_settings" class="btn">Account Settings</a>
 <a href="logout.jsp" class="btn">logout</a>
