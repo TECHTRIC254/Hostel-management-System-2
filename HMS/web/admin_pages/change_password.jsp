@@ -28,6 +28,7 @@ Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 Connection conn = DriverManager.getConnection(url, user, pass);
 Statement stmt = conn.createStatement();
 String query="update accounts set passwd='"+request.getParameter("password1")+"' where uname='"+session.getAttribute("username")+"'";
+session.setAttribute("password",request.getParameter("password1"));
 stmt.executeUpdate(query);
 conn.close();
 response.sendRedirect("account_settings.jsp?message=Password+updated+Succesfully&type=success");
