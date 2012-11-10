@@ -95,9 +95,11 @@ ResultSet rs = stmt.executeQuery(query);
         </tr>
         <%
 }
-out.println("<br/>");
 %>
 </table>
+<form action="add_student.jsp" method="POST">
+    <input type="submit" value="Add Student" style=" font-size: 24px;font-family: Arial">
+</form>
 <%
 rs.close();
 conn.close();

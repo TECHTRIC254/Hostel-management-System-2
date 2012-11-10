@@ -37,7 +37,6 @@ String query="select a.hid,a.name,a.capacity,a.no_of_rooms,a.mess_contractor,"
  + "a.mess_capacity,b.name,a.care_taker from Hostel a,Hall b where b.hid in(select Hall_id from hostel_hall"
  + " where Hostel_id=a.hid)";
 ResultSet rs = stmt.executeQuery(query);
-out.println("<br/>");
 %>
 <table class="table_style">
     <tr>

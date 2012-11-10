@@ -32,19 +32,31 @@ if(rs.getRow()==1)
                        <%
                         if(block==null||block.equals("home")){
                                                  %><h2 style="text-align: center">HOME</h2><%
-                               out.println("<iframe src =hall_pages/home.jsp width=1030 height=401>");
+                               out.println("<iframe src =hall_pages/home.jsp width=1030 height=419>");
                                out.println("<p>Your browser does not support iframes.</p>");
                                out.println("</iframe>");
                        }
                         else if(block.equals("hostel_info")){
                                                  %><h2 style="text-align: center">Hostel Information</h2><%
-                               out.println("<iframe src =hall_pages/hostel_info.jsp width=1030 height=401>");
+                               out.println("<iframe src =hall_pages/hostel_info.jsp width=1030 height=419>");
                                out.println("<p>Your browser does not support iframes.</p>");
                                out.println("</iframe>");
                        }
                         else if(block.equals("student_info")){
                                                  %><h2 style="text-align: center">Student Information</h2><%
-                               out.println("<iframe src =hall_pages/student_info.jsp width=1030 height=401>");
+                               out.println("<iframe src =hall_pages/student_info.jsp width=1030 height=419>");
+                               out.println("<p>Your browser does not support iframes.</p>");
+                               out.println("</iframe>");
+                       }
+			else if(block.equals("hostel_accounts")){
+                                                 %><h2 style="text-align: center">Hostel Accounts</h2><%
+                               out.println("<iframe src =hall_pages/hostel_accounts.jsp width=1030 height=419>");
+                               out.println("<p>Your browser does not support iframes.</p>");
+                               out.println("</iframe>");
+                       }
+			else if(block.equals("account_settings")){
+                                                 %><h2 style="text-align: center">Account Settings</h2><%
+                               out.println("<iframe src =hall_pages/account_settings.jsp width=1030 height=419>");
                                out.println("<p>Your browser does not support iframes.</p>");
                                out.println("</iframe>");
                        }

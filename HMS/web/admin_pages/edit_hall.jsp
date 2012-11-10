@@ -33,16 +33,16 @@ else{
 }
 %>
 <form action="modify_hall.jsp">
-<table style="text-align: center">
+<table style="margin-left: auto;margin-right: auto">
     <%
-    out.println("<tr><td>Hall ID</tr></td>");
-    out.println("<tr><td><input type=text value='"+rs.getInt("hid")+"' name='id' readonly/>");
-    out.println("<tr><td>Hall Name</tr></td>");
-    out.println("<tr><td><input type=text value='"+rs.getString("name")+"' name='name' required/>");
-    out.println("<tr><td>Provost</tr></td>");
-    out.println("<tr><td><input type=text value='"+rs.getString("provost")+"' name='provost' required/>");
-    out.println("<tr><td>Number of Hostels</tr></td>");
-    out.println("<tr><td><input type=text value='"+rs.getInt(3)+"' name='' readonly/>");
+    out.println("<tr><td>Hall ID</td>");
+    out.println("<td><input type=text value='"+rs.getInt("hid")+"' name='id' readonly/>");
+    out.println("<tr><td>Hall Name</td>");
+    out.println("<td><input type=text value='"+rs.getString("name")+"' name='name' required/>");
+    out.println("<tr><td>Provost</td>");
+    out.println("<td><input type=text value='"+rs.getString("provost")+"' name='provost' required/>");
+    out.println("<tr><td>Number of Hostels</td>");
+    out.println("<td><input type=text value='"+rs.getInt(3)+"' name='' readonly/>");
     %>
     <tr>
         <td><input type="submit" value="Update"/></td>

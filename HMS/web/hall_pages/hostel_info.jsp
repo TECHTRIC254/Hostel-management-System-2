@@ -84,7 +84,7 @@ ResultSet rs = stmt.executeQuery(query);
 %>
 </table>
 <form action="add_hostel.jsp"/>
-<input type="submit" value="Create Hostel">
+<input type="submit" value="Create Hostel" style=" font-size: 24px;font-family: Arial">
 </form>
 <%
 rs.close();

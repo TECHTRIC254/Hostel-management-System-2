@@ -36,6 +36,7 @@ ResultSet rs = stmt.executeQuery(query);
     <td>Phone</td>
     <td>Room No.</td>
     <td>Hostel</td>
+    <td></td>
     </tr>
     <%
     int i=0;

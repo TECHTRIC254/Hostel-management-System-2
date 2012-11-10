@@ -29,20 +29,19 @@
     String dept=request.getParameter("dept");
     String city=request.getParameter("city");
     String state=request.getParameter("state");
-    String phone=request.getParameter("phone");
     String year=request.getParameter("year");
     String hostel=request.getParameter("hostel");
-    //out.println(id+name+course+dept+city+state+year+Hostel);
+    String phone=request.getParameter("phone");
     if(invalid(name)==1||invalid(course)==1||invalid(dept)==1||invalid(city)==1||invalid(state)==1){
         %>
-        <jsp:forward page="edit_student.jsp" >
+        <jsp:forward page="add_student.jsp" >
         <jsp:param name="message" value="Enter valid inputs" />
         </jsp:forward>
         <%
     }
-       else if(!(id.matches("[0-9]+")&&year.matches("[0-9]+"))){
+       else if(!(id.matches("[0-9]+")&&year.matches("[0-9]+")&&phone.matches("[0-9]+"))){
            %>
-           <jsp:forward page="edit_student.jsp" >
+           <jsp:forward page="add_student.jsp" >
            <jsp:param name="message" value="Invalid Numeric entry" />
            </jsp:forward><%
        }
@@ -53,27 +52,29 @@ try{
 Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 Connection conn = DriverManager.getConnection(url, user, pass);
 Statement stmt = conn.createStatement();
-String query="Update Student set name='"+name+"' where sid="+id;
+String query="select count(*) from Student where sid="+id;
+ResultSet rs=stmt.executeQuery(query);
+rs.next();
+if(rs.getInt(1)!=0){%>
+    <jsp:forward page="add_student.jsp" >
+           <jsp:param name="message" value="ID already exists." />
+           <jsp:param name="type" value="success"/>
+           </jsp:forward><%
+}
+query="insert into Student(sid,name,course,dept,year,city,state,phone) values("+id+",'"+name+"','"
+	+course+"','"+dept+"',"+year+",'"+city+"','"+state+"',"+phone+")";
 stmt.executeUpdate(query);
-query="Update Student set course='"+course+"' where sid="+id;
+query="select hid from Hostel where name='"+hostel+"'";
+rs=stmt.executeQuery(query);
+rs.next();
+int hid=rs.getInt("hid");
+query="insert into student_hostel(student_id,hostel_id) values("+id+","+hid+")";
 stmt.executeUpdate(query);
-query="Update Student set dept='"+dept+"' where sid="+id;
-stmt.executeUpdate(query);
-query="Update Student set city='"+city+"' where sid="+id;
-stmt.executeUpdate(query);
-query="Update Student set state='"+state+"' where sid="+id;
-stmt.executeUpdate(query);
-query="Update Student set year="+year+" where sid="+id;
-stmt.executeUpdate(query);
-query="Update Student set phone="+phone+" where sid="+id;
-stmt.executeUpdate(query);
-query="Update student_hostel set hostel_id=(select hid from Hostel where name='"
-        +hostel+"') where student_id="+id;
 
 conn.close();
 %>
            <jsp:forward page="student_info.jsp" >
-           <jsp:param name="message" value="Student updated successfully" />
+           <jsp:param name="message" value="Student inserted successfully" />
            <jsp:param name="type" value="success"/>
            </jsp:forward><%
 

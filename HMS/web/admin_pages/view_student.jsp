@@ -25,67 +25,60 @@ ResultSet rs = stmt.executeQuery(query);
 rs.next();
 %>
 <h3 style="text-align: center">Student Information</h3>
-<table style="text-align: center;margin-left: auto;margin-right: auto">
+<table style="margin-left: auto;margin-right: auto">
     <tr>
         <td>
             Student ID
         </td>
-    <%out.println("<tr><td><input type=text value='"+rs.getInt("a.sid")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getInt("a.sid")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Name
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("a.name")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("a.name")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Course
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("a.course")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("a.course")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Department
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("a.dept")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("a.dept")+"' readonly/></tr></td>");%>
     
     <tr>
         <td>
             Year
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getInt("a.year")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getInt("a.year")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             City
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("a.city")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("a.city")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             State
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("a.state")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("a.state")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Phone
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getInt("a.phone")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getInt("a.phone")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Room Number
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("b.room_no")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("b.room_no")+"' readonly/></tr></td>");%>
         <tr>
         <td>
             Hostel
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("c.name")+"' readonly/></tr></td>");%>
+    <%
+    out.println("<td><input type=text value='"+rs.getString("c.name")+"' readonly/></tr></td>");
+%>
     <form action="student_info.jsp">
         <tr><td> <input type="submit" value='Go back'/></td></tr>
     </form>

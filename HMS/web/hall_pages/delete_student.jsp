@@ -12,7 +12,7 @@ String query="delete from Student where sid="+request.getParameter("id");
 stmt.executeUpdate(query);
 conn.close();
 %>
-         <jsp:forward page="hostel_info.jsp" >
+         <jsp:forward page="student_info.jsp" >
   <jsp:param name="message" value="Student deleted Successfully" />
   <jsp:param name="type" value="success"/>
 </jsp:forward>

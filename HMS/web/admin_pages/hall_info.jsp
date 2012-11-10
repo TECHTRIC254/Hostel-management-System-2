@@ -78,7 +78,6 @@ ResultSet rs = stmt.executeQuery(query);
         </tr>
         <%
 }
-out.println("<br/>");
 %>
 </table>
     <form action="add_hall.jsp">

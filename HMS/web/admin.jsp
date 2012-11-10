@@ -32,41 +32,41 @@ if(rs.getRow()==1)
                        <%
                        if(block==null||block.equals("home")){
                                                  %><h2 style="text-align: center">HOME</h2><%
-                               out.println("<iframe src =admin_pages/home.jsp width=1030 height=401>");
+                               out.println("<iframe src =admin_pages/home.jsp width=1030 height=419>");
                                out.println("<p>Your browser does not support iframes.</p>");
                                out.println("</iframe>");
                        }
                                              else if(block.equals("hall_info")){
                                                  %><h2 style="text-align: center">Hall Info</h2><%
-                                                out.println("<iframe src =admin_pages/hall_info.jsp width=1030 height=401>");
+                                                out.println("<iframe src =admin_pages/hall_info.jsp width=1030 height=419>");
                                                 out.println("<p>Your browser does not support iframes.</p>");
                                                 out.println("</iframe>");
                                                  
                                              }
                                             else if(block.equals("hostel_info")){
                                                 %><h2 style="text-align: center;">Hostel Info</h2><%
-                                                out.println("<iframe src =admin_pages/hostel_info.jsp width=1030 height=401>");
+                                                out.println("<iframe src =admin_pages/hostel_info.jsp width=1030 height=419>");
                                                 out.println("<p>Your browser does not support iframes.</p>");
                                                 out.println("</iframe>");
                                                  
                                              }
                                             else if(block.equals("student_info")){
                                                 %><h2 style="text-align: center;">Student Info</h2><%
-                                                out.println("<iframe src =admin_pages/student_info.jsp width=1030 height=401>");
+                                                out.println("<iframe src =admin_pages/student_info.jsp width=1030 height=419>");
                                                 out.println("<p>Your browser does not support iframes.</p>");
                                                 out.println("</iframe>");
                                                  
                                              }
                                              else if(block.equals("hall_accounts")){
                                                  %><h2 style="text-align: center;">Hall Accounts</h2><%
-                                                out.println("<iframe src =admin_pages/hall_accounts.jsp width=1030 height=401>");
+                                                out.println("<iframe src =admin_pages/hall_accounts.jsp width=1030 height=419>");
                                                 out.println("<p>Your browser does not support iframes.</p>");
                                                 out.println("</iframe>");
                                                  
                                              }
                                              else if(block.equals("account_settings")){
                                                   %><h2 style="text-align: center;">Account Settings</h2><%
-                                                out.println("<iframe src =admin_pages/account_settings.jsp width=1030 height=401>");
+                                                out.println("<iframe src =admin_pages/account_settings.jsp width=1030 height=419>");
                                                 out.println("<p>Your browser does not support iframes.</p>");
                                                 out.println("</iframe>");
                                                  
