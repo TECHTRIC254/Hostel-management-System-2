@@ -25,54 +25,47 @@ ResultSet rs = stmt.executeQuery(query);
 rs.next();
 %>
 <h3 style="text-align: center">Hostel Information</h3>
-<table style="text-align: center;margin-left: auto;margin-right: auto">
+<table style="margin-left: auto;margin-right: auto">
     <tr>
         <td>
             Hostel ID
         </td>
-    <%out.println("<tr><td><input type=text value='"+rs.getInt("a.hid")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getInt("a.hid")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Name
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("a.name")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("a.name")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Care Taker
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("a.care_taker")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("a.care_taker")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Capacity
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getInt("a.capacity")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getInt("a.capacity")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Number of Rooms
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getInt("a.no_of_rooms")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getInt("a.no_of_rooms")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Mess contractor
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("a.mess_contractor")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("a.mess_contractor")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Mess capacity
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getInt("a.mess_capacity")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getInt("a.mess_capacity")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Hall name
         </td>
-    </tr>
-    <%out.println("<tr><td><input type=text value='"+rs.getString("b.name")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getString("b.name")+"' readonly/></tr></td>");%>
     <form action="hostel_info.jsp">
         <tr><td> <input type="submit" value='Go back'/></td></tr>
     </form>

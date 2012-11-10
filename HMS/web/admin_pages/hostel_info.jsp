@@ -10,6 +10,21 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
+      <%
+   if(request.getParameter("message")!=null){
+       if(request.getParameter("type").equals("error")){
+        out.println("<div class=warning>"+request.getParameter("message")+"</div>");   
+       }
+             else if(request.getParameter("type").equals("success")){
+           out.println("<div class=signoff>"+request.getParameter("message")+"</div>");
+       }
+        
+    }
+       else{
+       out.println("<br/>");
+        
+       }
+   %>
 <% 
 String url = "jdbc:mysql://localhost:3306/hms";
 String user= "root";
@@ -34,6 +49,7 @@ out.println("<br/>");
     <td>Mess Contractor</td>
     <td>Mess Capacity</td>
     <td>Hall Name</td>
+    <td></td>
     </tr>
     <%
     int i=0;

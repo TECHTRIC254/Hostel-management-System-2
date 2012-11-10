@@ -40,6 +40,8 @@ ResultSet rs = stmt.executeQuery(query);
     <tr>
     <td>UserName</td>
     <td>Hall</td>
+    <td></td>
+    <td></td>
     </tr>
     <%
     int i=0;
