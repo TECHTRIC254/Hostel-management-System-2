@@ -10,7 +10,7 @@ import="java.sql.*" errorPage="" %>
     String name=request.getParameter("name");
     if(name==null||name.equals("")){
     %>
-<jsp:forward page="hall_info.jsp" >
+<jsp:forward page="edit_hall.jsp" >
   <jsp:param name="message" value="Name field can not be left blank" />
   <jsp:param name="type" value="error"/>
 </jsp:forward><%
@@ -18,7 +18,7 @@ import="java.sql.*" errorPage="" %>
 else if(name.indexOf(34)!=-1||name.indexOf(39)!=-1) {
     %>
     
-<jsp:forward page="hall_info.jsp" >
+<jsp:forward page="edit_hall.jsp" >
   <jsp:param name="message" value="Name should not contain single or double quotes" />
   <jsp:param name="type" value="error"/>
 </jsp:forward>
@@ -38,7 +38,7 @@ if(rs.getRow()==1)
        {
     rs.close();
     conn.close();%>
-<jsp:forward page="hall_info.jsp" >
+<jsp:forward page="edit_hall.jsp" >
   <jsp:param name="message" value="Hall name already exist" />
   <jsp:param name="type" value="error"/>
 </jsp:forward><%
@@ -46,9 +46,11 @@ if(rs.getRow()==1)
 try{
 query="update Hall set name='"+name+"' where hid="+request.getParameter("id");
 stmt.executeUpdate(query);
+query="update Hall set provost='"+request.getParameter("provost")+"' where hid="+request.getParameter("id");
+stmt.executeUpdate(query);
 conn.close();%>
 <jsp:forward page="hall_info.jsp" >
-  <jsp:param name="message" value="Hall name updated Successfully" />
+  <jsp:param name="message" value="Hall info updated Successfully" />
   <jsp:param name="type" value="success"/>
 </jsp:forward>
 <%

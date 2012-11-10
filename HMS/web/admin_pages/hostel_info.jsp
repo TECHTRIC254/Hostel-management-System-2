@@ -18,8 +18,8 @@ try{
 Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 Connection conn = DriverManager.getConnection(url, user, pass);
 Statement stmt = conn.createStatement();
-String query="select a.hid,a.name,a.capacity,a.no_of_rooms,a.no_of_emp,a.mess_contractor,"
- + "a.mess_capacity,b.name from Hostel a,Hall b where b.hid in(select Hall_id from hostel_hall"
+String query="select a.hid,a.name,a.capacity,a.no_of_rooms,a.mess_contractor,"
+ + "a.mess_capacity,b.name,a.care_taker from Hostel a,Hall b where b.hid in(select Hall_id from hostel_hall"
  + " where Hostel_id=a.hid)";
 ResultSet rs = stmt.executeQuery(query);
 out.println("<br/>");
@@ -28,9 +28,9 @@ out.println("<br/>");
     <tr>
     <td>Hostel ID</td>
     <td>Name</td>
+    <td>Care taker</td>
     <td>Capacity</td>
     <td>Number of Rooms</td>
-    <td>Number of Employees</td>
     <td>Mess Contractor</td>
     <td>Mess Capacity</td>
     <td>Hall Name</td>
@@ -41,13 +41,18 @@ out.println("<br/>");
         out.println("<tr>");
         out.println("<td>"+rs.getInt(1)+"</td>");
         out.println("<td>"+rs.getString("a.name")+"</td>");
+        out.println("<td>"+rs.getString("a.care_taker")+"</td>");
         out.println("<td>"+rs.getInt(3)+"</td>");
-        out.println("<td>"+rs.getInt(5)+"</td>");
         out.println("<td>"+rs.getInt(4)+"</td>");
         out.println("<td>"+rs.getString("a.mess_contractor")+"</td>");
         
-        out.println("<td>"+rs.getInt(7)+"</td>");
+        out.println("<td>"+rs.getInt(6)+"</td>");
         out.println("<td>"+rs.getString("b.name")+"</td>");
+        
+        out.println("<form action='view_hostel.jsp'>");
+        out.println("<input type='hidden' value='"+rs.getInt("a.hid")+"' name='id'/>");
+        out.println("<td><input type='submit' value='View'></td>");
+        out.println("</form>");
         out.println("</tr>");
         i=i+1;
                }

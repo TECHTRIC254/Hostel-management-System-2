@@ -21,7 +21,7 @@
         
     }
        else{
-       out.println("");
+       out.println("<br/>");
         
        }
    %>
@@ -40,7 +40,7 @@ ResultSet rs = stmt.executeQuery(query);
     <tr>
     <td>Hall ID</td>
     <td>Name</td>
-    <td>Number of Employees</td>
+    <td>Provost</td>
     <td>Number of Hostels</td>
     </tr>
     <%
@@ -51,15 +51,16 @@ ResultSet rs = stmt.executeQuery(query);
         out.println("<tr>");
         out.println("<td>"+rs.getInt(1)+"</td>");
         //out.println("<td>"+rs.getString("name")+"</td>");
-        out.println("<form method='POST' action='modify_hall.jsp'>");
+        out.println("<form method='POST' action='edit_hall.jsp'>");
         out.println("<input type='hidden' value='"+rs.getInt(1)+"' name='id'/>");
-        out.println("<td><input type='text' value='"+rs.getString("name")+"' name='name' required></td>");
+        out.println("<td>"+rs.getString("name")+"</td>");
         %>
         
         <%
+        out.println("<td>"+rs.getString("provost")+"</td>");
         out.println("<td>"+rs.getInt(3)+"</td>");
-        out.println("<td>"+rs.getInt(4)+"</td>");
-        out.println("<td><input type='submit' value='Update'/></td>");
+        
+        out.println("<td><input type='submit' value='Edit'/></td>");
         out.println("</form>");
         out.println("<form method='POST' action='delete_hall.jsp'>");
         out.println("<input type='hidden' value='"+rs.getInt(1)+"' name='id'/>");

@@ -35,7 +35,7 @@ if(rs.getRow()==1)
 </jsp:forward><%
        }
 
-    query="insert into Hall(name,no_of_emp,no_of_hostels) values('"+request.getParameter("name")+"',0,0)";
+    query="insert into Hall(name,provost,no_of_hostels) values('"+request.getParameter("name")+"','"+request.getParameter("provost")+"',0)";
     stmt.executeUpdate(query);
 
 conn.close();

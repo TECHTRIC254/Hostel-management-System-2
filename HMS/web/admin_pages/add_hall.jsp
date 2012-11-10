@@ -24,10 +24,16 @@
     <form method="POST" action="insert_hall.jsp">
     <table>
         <tr>
-            <td style="text-align: center">Name</td>
+            <td style="text-align: center">Name of Hall</td>
         </tr>
         <tr>
             <td style="text-align: center"><input type="text"  name="name" required/></td>
+        </tr>
+        <tr>
+            <td style="text-align: center">Name of Provost</td>
+        </tr>
+        <tr>
+            <td style="text-align: center"><input type="text"  name="provost" required/></td>
         </tr>
         <tr>
             <td style="text-align: center"><input type="submit" value="Add Hall"/></td>

@@ -29,11 +29,6 @@ query="select count(*) from Student";
 rs=stmt.executeQuery(query);
 rs.next();
 int student=rs.getInt(1);
-//Number of employees
-query="select count(*) from Employee";
-rs=stmt.executeQuery(query);
-rs.next();
-int employee=rs.getInt(1);
 %>
 <br/>
 <table class="table_style">
@@ -51,10 +46,6 @@ int employee=rs.getInt(1);
     <tr>
         <td>Number of Students</td>
         <td><%=student%></td>
-    </tr>
-    <tr>
-        <td>Number of Employees</td>
-        <td><%=employee%></td>
     </tr>
 </table>
 <%
