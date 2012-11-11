@@ -5,6 +5,7 @@ import="java.sql.*" errorPage="" %>
 <title>Hostel Page</title>
 </head>
 <body>
+    <% String block=request.getParameter("page");%>
     <%@include file="banner.jsp"%>
 <% String url = "jdbc:mysql://localhost:3306/hms";
 String user= "root";
@@ -22,11 +23,39 @@ if(rs.getRow()==1)
 {
            %>
            <table><tr>
-                   <td>
+                   <td style="vertical-align: top">
                     <%@include file="hostel-panel.jsp"%>   
                    </td>
                    <td>
-                       Hostel page info
+                       <%
+                       if(block==null||block.equals("home")){
+                               %><h2 style="text-align: center">HOME</h2><%
+                               out.println("<iframe src =hostel_pages/home.jsp width=1030 height=380>");
+                               out.println("<p>Your browser does not support iframes.</p>");
+                               out.println("</iframe>");
+                       }
+		       	       else if (block.equals("student_info")){
+			       %><h2 style="text-align: center">Student Info</h2><%
+                               out.println("<iframe src =hostel_pages/student_info.jsp width=1030 height=380>");
+                               out.println("<p>Your browser does not support iframes.</p>");
+                               out.println("</iframe>");
+			       }
+		       else if (block.equals("visitor_book")){
+			       %><h2 style="text-align: center">Visitor Book</h2><%
+                               out.println("<iframe src =hostel_pages/visitor_book.jsp width=1030 height=380>");
+                               out.println("<p>Your browser does not support iframes.</p>");
+                               out.println("</iframe>");
+			       }
+		       else if (block.equals("account_settings")){
+			       %><h2 style="text-align: center">Account Settings</h2><%
+                               out.println("<iframe src =hostel_pages/account_settings.jsp width=1030 height=380>");
+                               out.println("<p>Your browser does not support iframes.</p>");
+                               out.println("</iframe>");
+			       }
+		       	       else{
+			   out.println("Requested resource is not available or you are not supposed to access it");
+			       }
+		       %>
                    </td>
                </tr></table>
            <%

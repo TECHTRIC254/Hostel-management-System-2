@@ -12,7 +12,7 @@ import="java.sql.*" errorPage="" %>
     <title>Login Page</title>
 </head>
 <%@ include file="banner.jsp" %>
-<body background="media/hostel.jpg">
+<body style="">
 <% 
 if(session.getAttribute("username")!=null){
     Integer level=(Integer)session.getAttribute("level");

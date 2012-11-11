@@ -22,6 +22,8 @@ Connection conn = DriverManager.getConnection(url, user, pass);
 Statement stmt = conn.createStatement();
 String query="delete from Hall where hid="+request.getParameter("id");
 stmt.executeUpdate(query);
+query="delete from accounts where h_no="+request.getParameter("id")+" and type=1";
+stmt.executeUpdate(query);
 conn.close();
     %>
     <jsp:forward page="hall_info.jsp" >

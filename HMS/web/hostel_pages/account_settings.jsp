@@ -25,7 +25,7 @@
         
        }
    %>
-<table>
+<table style="text-align: center">
         <form method="POST" action="change_username.jsp">
         <tr>
             <td><strong>User Name</strong></td>
