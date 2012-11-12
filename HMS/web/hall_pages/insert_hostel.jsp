@@ -71,6 +71,7 @@ int id=rs.getInt(1);
 query="insert into hostel_hall values("+id+","+session.getAttribute("h_no")+")";
 stmt.executeUpdate(query);
 query="update Hall set no_of_hostels=no_of_hostels+1 where hid="+session.getAttribute("h_no");
+stmt.executeUpdate(query);
 rs.close();
 conn.close();
 
