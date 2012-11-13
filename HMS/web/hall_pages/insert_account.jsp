@@ -23,7 +23,7 @@ else if(request.getParameter("hostel").equals("None")) {
     %>
     
 <jsp:forward page="create_account.jsp" >
-  <jsp:param name="message" value="Select a Hall and try again" />
+  <jsp:param name="message" value="Select a Hostel and try again" />
 </jsp:forward>
     <%
 

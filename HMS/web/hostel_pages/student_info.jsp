@@ -64,7 +64,7 @@ ResultSet rs = stmt.executeQuery(query);
         out.println("<td>"+rs.getInt(5)+"</td>");
         out.println("<td>"+rs.getString("a.city")+"</td>");
         out.println("<td>"+rs.getString("a.state")+"</td>");
-        out.println("<td>"+rs.getInt(8)+"</td>");
+        out.println("<td>"+rs.getLong(8)+"</td>");
         out.println("<td>"+rs.getInt(9)+"</td>");
         out.println("<form action='view_student.jsp'>");
         out.println("<input type='hidden' value='"+rs.getInt("a.sid")+"' name='id'/>");

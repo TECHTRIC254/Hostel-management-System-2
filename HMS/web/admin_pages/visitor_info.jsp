@@ -34,8 +34,9 @@ try{
 Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 Connection conn = DriverManager.getConnection(url, user, pass);
 Statement stmt = conn.createStatement();
-String query="select a.sid,a.name,a.entry_time,a.exit_time,b.name from Visitors a,Student b where "
- + "a.sid=b.sid ";
+String query="select a.sid,a.name,a.entry_time,a.exit_time,b.name,c.name from Visitors a,Student b,Hall c where "
+ + "a.sid=b.sid and c.hid in(select Hall_id from hostel_hall where Hostel_id in"
+ + "(select hostel_id from student_hostel where student_id=a.sid))";
 ResultSet rs = stmt.executeQuery(query);
 %>
 <table class="table_style">
@@ -43,6 +44,7 @@ ResultSet rs = stmt.executeQuery(query);
     <td>Student ID</td>
     <td>Student Name</td>
     <td>Visitor Name</td>
+    <td>Hall</td>
     <td>Entry Time</td>
     <td>Exit Time</td>
     <td></td>
@@ -54,6 +56,7 @@ ResultSet rs = stmt.executeQuery(query);
         out.println("<td>"+rs.getInt("a.sid")+"</td>");
         out.println("<td>"+rs.getString("b.name")+"</td>");
         out.println("<td>"+rs.getString("a.name")+"</td>");
+        out.println("<td>"+rs.getString("c.name")+"</td>");
         out.println("<td>"+rs.getString("a.entry_time")+"</td>");
 	out.println("<form action='view_visitor.jsp'>");
         if(rs.getString("a.exit_time")==null){
@@ -66,6 +69,7 @@ ResultSet rs = stmt.executeQuery(query);
 	}
         //out.println("<td>"+rs.getInt("a.exit_time")+"</td>");
         out.println("<input type='hidden' value='"+rs.getString("b.name")+"' name='student_name' />");
+        out.println("<input type='hidden' value='"+rs.getString("c.name")+"' name='hall' />");
 	out.println("<input type='hidden' value='"+rs.getString("a.name")+"' name='visitor_name' />");
         out.println("<input type='hidden' value='"+rs.getInt("a.sid")+"' name='id'/>");
 	out.println("<input type='hidden' value='"+rs.getString("a.entry_time")+"' name='entry_time' />");

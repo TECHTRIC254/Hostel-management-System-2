@@ -66,7 +66,7 @@ rs.next();
         <td>
             Phone
         </td>
-    <%out.println("<td><input type=text value='"+rs.getInt("a.phone")+"' readonly/></tr></td>");%>
+    <%out.println("<td><input type=text value='"+rs.getLong("a.phone")+"' readonly/></tr></td>");%>
     <tr>
         <td>
             Room Number

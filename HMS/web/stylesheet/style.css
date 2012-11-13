@@ -39,7 +39,7 @@
 	
 	background: red; /* old browsers */
 	background: -moz-linear-gradient(top, yellowgreen 0%, green 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8DD297), color-stop(100%,#398525)); /* webkit */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,yellowgreen), color-stop(100%,green)); /* webkit */
 	
 	box-shadow: inset 0px 0px 6px #fff;
 	-webkit-box-shadow: inset 0px 0px 6px #fff;

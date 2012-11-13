@@ -49,7 +49,7 @@ else{
         <td><input type="text" name="mess_contractor" required=""></td>
     </tr>
     <tr>
-        <td style="text-align: center"><input type="submit" value="Update"/></td>
+        <td style="text-align: center"><input type="submit" value="Create"/></td>
     </tr>
 </table>
 </form>

@@ -7,6 +7,7 @@ String visitor_name=request.getParameter("visitor_name");
 String id=request.getParameter("id");
 String entry_time=request.getParameter("entry_time");
 String exit_time=request.getParameter("exit_time");
+String hall=request.getParameter("hall");
 %>
 <table>
     <%
@@ -17,6 +18,10 @@ String exit_time=request.getParameter("exit_time");
     out.println("<tr>");
     out.println("<td>Student visited</td>");
     out.println("<td><input type=text readonly value='"+student_name+"'></td>");
+    out.println("</tr>");
+    out.println("<tr>");
+    out.println("<td>Hall</td>");
+    out.println("<td><input type=text readonly value='"+hall+"'></td>");
     out.println("</tr>");
     out.println("<tr>");
     out.println("<td>Entry time</td>");

@@ -34,15 +34,17 @@ try{
 Class.forName ("com.mysql.jdbc.Driver").newInstance ();
 Connection conn = DriverManager.getConnection(url, user, pass);
 Statement stmt = conn.createStatement();
-String query="select a.sid,a.name,a.entry_time,a.exit_time,b.name from Visitors a,Student b where "
+String query="select a.sid,a.name,a.entry_time,a.exit_time,b.name,c.name from Visitors a,Student b,Hostel c where "
  + "a.sid=b.sid and a.sid in (select student_id from student_hostel where hostel_id in"
- + "(select Hostel_id from hostel_hall where Hall_id="+session.getAttribute("h_no")+"))";
+ + "(select Hostel_id from hostel_hall where Hall_id="+session.getAttribute("h_no")+")) and c.hid in"
+ + "(select hostel_id from student_hostel where student_id=b.sid)";
 ResultSet rs = stmt.executeQuery(query);
 %>
 <table class="table_style">
     <tr>
     <td>Student ID</td>
     <td>Student Name</td>
+    <td>Hostel Name</td>
     <td>Visitor Name</td>
     <td>Entry Time</td>
     <td>Exit Time</td>
@@ -54,7 +56,9 @@ ResultSet rs = stmt.executeQuery(query);
         out.println("<tr>");
         out.println("<td>"+rs.getInt("a.sid")+"</td>");
         out.println("<td>"+rs.getString("b.name")+"</td>");
+        out.println("<td>"+rs.getString("c.name")+"</td>");
         out.println("<td>"+rs.getString("a.name")+"</td>");
+        
         out.println("<td>"+rs.getString("a.entry_time")+"</td>");
 	out.println("<form action='view_visitor.jsp'>");
         if(rs.getString("a.exit_time")==null){
@@ -68,6 +72,7 @@ ResultSet rs = stmt.executeQuery(query);
         //out.println("<td>"+rs.getInt("a.exit_time")+"</td>");
         out.println("<input type='hidden' value='"+rs.getString("b.name")+"' name='student_name' />");
 	out.println("<input type='hidden' value='"+rs.getString("a.name")+"' name='visitor_name' />");
+        out.println("<input type='hidden' value='"+rs.getString("c.name")+"' name='hostel' />");
         out.println("<input type='hidden' value='"+rs.getInt("a.sid")+"' name='id'/>");
 	out.println("<input type='hidden' value='"+rs.getString("a.entry_time")+"' name='entry_time' />");
         out.println("<td><input type='submit' value='View Visitor'/></td>");
